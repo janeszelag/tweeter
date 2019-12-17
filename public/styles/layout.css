@@ -29,19 +29,41 @@ main {
   margin-top: 0
 }
 
-article {
+.article-tweet {
   width: 100%;
-  border:  #545149 solid 2px;
-  padding: 2em;
+  border:  #545149 solid 4px;
+  padding: 1.5em;
+  padding-bottom: 1em;
   margin-bottom: 1em;
 }
 
-
-.main-inner-div {
-  padding-bottom: 0.5em;
-  border-bottom: #545149 solid 2px;
+.tweet-header {
+  width: 100%;
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+.tweet-footer {
+  width: 100%;
+  border-top: #545149 solid 4px;
+  margin-bottom: 0em
+}
+
+.tweet-text {
+  font-size: xx-large;
+}
+
+#tweet-age {
+  font-size: medium;
+  margin-bottom: 0;
+}
+
+#user-handle {
+  display:none
+}
+
+article:hover {
+  box-shadow: 10px 10px 5px grey;
+}
+article:hover #user-handle {
+  display: block;
+  float: right;
+}
