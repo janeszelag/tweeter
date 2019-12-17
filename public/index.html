@@ -17,10 +17,13 @@
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/moment-with-locales.min.js"></script>
+    
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+
   </head>
 
   <body>
@@ -33,9 +36,6 @@
     <header class="page-header">
       <div>
           <img class="avatar" src="/images/profile-hex.png"> 
-      </div>
-      <br>
-      <div>
           <h2 id="name">Your Name</h2>
       </div>
   </header>
@@ -49,16 +49,18 @@
             <span id=counter>140</span>
           </form>
         </section>
-        <article class="article-tweet">
-          <header class="tweet-header">
-            <span>Name</span>
-            <span id=user-handle>@userHandle</span>
-          </header>
-          <p class="tweet-text">An example tweet.</p>
-          <footer class="tweet-footer">
-            <p id=tweet-age>X days old</p>
-          </footer>
-        </article>
+        <section id="tweets-container">
+          <article class="tweet-container">
+            <header>
+              <span id="user-name">Name</span>
+              <span id="user-handle">@userHandle</span>
+            </header>
+            <p class="tweet-text">An example tweet.</p>
+            <footer>
+              <p id=tweet-age>X days old</p>
+            </footer> 
+          </article>
+        </section>
     </main>
   </body>
-</html>
+</html> 

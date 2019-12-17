@@ -29,7 +29,7 @@ main {
   margin-top: 0
 }
 
-.article-tweet {
+.tweet-container {
   width: 100%;
   border:  #545149 solid 4px;
   padding: 1.5em;
@@ -37,11 +37,11 @@ main {
   margin-bottom: 1em;
 }
 
-.tweet-header {
+.tweet-container header {
   width: 100%;
 }
 
-.tweet-footer {
+.tweet-container footer {
   width: 100%;
   border-top: #545149 solid 4px;
   margin-bottom: 0em
@@ -49,6 +49,11 @@ main {
 
 .tweet-text {
   font-size: xx-large;
+}
+
+
+#user-name {
+  font-size: large;
 }
 
 #tweet-age {
@@ -60,10 +65,11 @@ main {
   display:none
 }
 
-article:hover {
+.tweet-container:hover {
   box-shadow: 10px 10px 5px grey;
 }
-article:hover #user-handle {
+
+.tweet-container:hover #user-handle {
   display: block;
   float: right;
 }
