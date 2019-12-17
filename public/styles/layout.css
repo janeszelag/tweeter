@@ -18,6 +18,32 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+main {
+  width: 90%;
+  margin-top: 120px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0
+}
+
+.main-div {
+  width: 100%;
+  border:  #545149 solid 2px;
+  padding: 2em;
+  margin-bottom: 1em;
+}
+
+/* main h4 {
+  padding-bottom: 0.5em;
+  border-bottom: #545149 solid 2px;
+} */
+
+.main-inner-div {
+  padding-bottom: 0.5em;
+  border-bottom: #545149 solid 2px;
 }
 
 /*

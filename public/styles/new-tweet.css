@@ -1,0 +1,25 @@
+.form-text {
+  width: 100%;
+  font-weight: bold;
+  border: none;
+  border-bottom: #545149 solid 5px;
+  background-color: #f4f1ec;
+  height: 50px;
+}
+
+.submit-tweet {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  background-color: #4056A1;
+  font-family: "Bungee", sans-serif;
+  color: #FFFFFF;
+  font-size: x-large;
+}
+
+#counter {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  font-family: "Bungee", sans-serif;
+  font-weight: bold;
+  float: right;
+}

@@ -1,0 +1,38 @@
+.navbar {
+  height: 120px;
+  background-color: #4056A1;
+  width: 100%;
+}
+
+.title-span {
+  font-family: "Bungee", sans-serif;
+  color: #FFFFFF;
+  font-size: xx-large;
+}
+
+.nav-span {
+  position: fixed;
+  top: 1.5em;
+  left: 1.5em;
+}
+
+.fixed-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1030;
+}
+
+.new-tweet {
+  font-family: "Source Sans Pro", sans-serif;
+  color: #FFFFFF;
+  font-size: x-large;
+  float: right;
+}
+
+.tweet-span {
+  position: fixed;
+  top: 1em;
+  right: 1.5em;
+}

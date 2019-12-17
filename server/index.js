@@ -9,6 +9,7 @@ const app           = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
+//public folder is being sent out always, 
 
 // The in-memory database of tweets. It's a basic object with an array in it.
 const db = require("./lib/in-memory-db");
@@ -22,9 +23,15 @@ const db = require("./lib/in-memory-db");
 // require it and pass the `db` parameter immediately:
 const DataHelpers = require("./lib/data-helpers.js")(db);
 
+//Me - dataHelpers is the makeDataHelpers function from that file, with the db put in (const db made up there)
+
 // The `tweets-routes` module works similarly: we pass it the `DataHelpers` object
 // so it can define routes that use it to interact with the data layer.
+
+
 const tweetsRoutes = require("./routes/tweets")(DataHelpers);
+
+// me - we've put in datahelpers into the tweets router, so basically we put in makeDataHelpers
 
 // Mount the tweets routes at the "/tweets" path prefix:
 app.use("/tweets", tweetsRoutes);
