@@ -1,24 +1,30 @@
+//HELPER FUNCTIONS
 
-// function tweetAge (time) {
-// let age = jQuery.timeago(time); 
-// return age; 
-// }
-
-
-
-
+//function to ensure that content is read as text and not a script for security reasons
 function escape(str) {
   var div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 }
 
+//uses moment to return the age of the tweet
 function tweetAge(time) {
   let timeSince = moment(time).fromNow();
   return timeSince; 
 }
 
- const createTweetElement = function(tweet) {
+// loops through an array of tweets, creating a DOM structure for each one via createTweetElement
+// appends to tweets container
+const renderTweets = function(tweets) {
+ 
+}
+
+
+
+
+
+//function that will generate the DOM structure for a tweet, given a tweet object
+const createTweetElement = function(tweet) {
 
   let ageOfTweet = tweetAge(tweet.created_at);
 
@@ -40,25 +46,35 @@ function tweetAge(time) {
  }
 
 
-const tweetData = {
-  "user": {
-    "name": "Newton",
-    "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
-    },
-  "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-  "created_at": 1461116232227
-}
-//standard unix time
-//moment.js
-const $tweet = createTweetElement(tweetData);
 
-// Test / driver code (temporary)
-console.log($tweet); // to see what it looks like
 
-$(document).ready(function() {
-  $('#tweets-container').append($tweet);
-});
- // to add it to the page so we can make sure it's got all the right elements, classes,
+
+
+
+
+
+
+
+
+// const tweetData = {
+//   "user": {
+//     "name": "Newton",
+//     "avatars": "https://i.imgur.com/73hZDYK.png",
+//       "handle": "@SirIsaac"
+//     },
+//   "content": {
+//       "text": "If I have seen further it is by standing on the shoulders of giants"
+//     },
+//   "created_at": 1461116232227
+// }
+// //standard unix time
+// //moment.js
+// const $tweet = createTweetElement(tweetData);
+
+// // Test / driver code (temporary)
+// console.log($tweet); // to see what it looks like
+
+// $(document).ready(function() {
+//   $('#tweets-container').append($tweet);
+// });
+//  // to add it to the page so we can make sure it's got all the right elements, classes,
