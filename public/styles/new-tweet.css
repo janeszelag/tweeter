@@ -1,15 +1,17 @@
-.form-text {
+#form-text {
   width: 100%;
   font-weight: bold;
+  font-size: larger;
   border: none;
   border-bottom: #545149 solid 5px;
   background-color: #f4f1ec;
   height: 50px;
+  margin-top: 2em;
 }
 
 .submit-tweet {
   margin-top: 0.5em;
-  margin-bottom: 0.5em;
+  margin-bottom: 1em;
   background-color: #4056A1;
   font-family: "Bungee", sans-serif;
   color: #FFFFFF;
@@ -18,8 +20,12 @@
 
 #counter {
   margin-top: 0.5em;
-  margin-bottom: 0.5em;
+  margin-bottom: 1em;
   font-family: "Bungee", sans-serif;
   font-weight: bold;
   float: right;
+}
+
+.red-txt {
+  color: red; 
 }
