@@ -1,3 +1,5 @@
+
+
 //✧✧✧✧✧✧✧✧✧✧HELPER FUNCTIONS✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧
 
 //escape function to ensure that content is read as text and not a script for security reasons
@@ -14,6 +16,9 @@ function tweetAge(time) {
   return timeSince; 
 }
 
+
+
+//✧✧✧✧✧✧✧✧✧✧Recieving & Rendering Tweets Functions✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧
 
 
 // loops through an array of tweets, creating a DOM structure for each one via createTweetElement
@@ -58,17 +63,23 @@ const createTweetElement = function(tweet) {
 }
 
 
-
-//ajax POST request 
+//ajax POST request for new tweet submission 
 function newTweet() {
   const $submitTweet = $('#tweet-form');
+  console.log('hiiiiiii',$submitTweet);
+  
   $submitTweet.submit( function () {
     event.preventDefault();
-    $submitTweet.serialize()
-
-    $.post('/tweets',  $submitTweet.serialize(), () => {
-      console.log("Success!")
-    })
+    const tweetTextLength = $("#form-text").val().length;
+    if (tweetTextLength === 0) {
+      alert("Sorry, your tweet was empty...");
+    } else if (tweetTextLength > 140) {
+      alert("Sorry, your tweet is too long...");
+    } else {
+      $.post('/tweets',  $submitTweet.serialize(), () => {
+        console.log("Success!")
+      })
+    }
   })
 }
 
@@ -83,10 +94,17 @@ const loadTweets = function () {
 }
 
 
-
+//calls these functions when the page index.html is loaded 
 $(document).ready(function() {
   newTweet();
   loadTweets();
 });
 
-
+  // const characterCount = characterCounter();
+  // if (!Tweet) {
+  //   alert("Sorry, your tweet was empty...");
+  //   return; 
+  // } else if (characterCount < 0 ) {
+  //   alert("Sorry, your tweet is too long...");
+  //   return; 
+  // } else {
