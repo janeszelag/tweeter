@@ -6,7 +6,7 @@ const characterCounter = function () {
 //maximum character length
 const maxLength = 140;
 
-  $("#form-text").keyup(function() {
+  $("#form-text").on(('input'), function() {
     const length = $(this).val().length;
     const tweetLength = maxLength - length;
     const $counter = $(this).siblings("span");

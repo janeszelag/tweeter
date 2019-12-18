@@ -27,7 +27,7 @@ const renderTweets = function(tweets) {
   for (const tweet of tweets) {
     const $tweet = createTweetElement(tweet);
     console.log($tweet);
-    $('#tweets-container').append($tweet);
+    $('#tweets-container').prepend($tweet);
   }
   return;
 }
@@ -77,11 +77,21 @@ function newTweet() {
       alert("Sorry, your tweet is too long...");
     } else {
       $.post('/tweets',  $submitTweet.serialize(), () => {
-        console.log("Success!")
+        console.log("Success!");
+      })
+      .done(function() {
+        loadTweets();
+        const $counter = $('#counter');
+        $($submitTweet)[0].reset();
+        $counter.text(140);
+        $("submit-tweet").blur();
       })
     }
   })
+
 }
+
+
 
 
 //ajax GET request from /tweets to receive the array of tweets as JSON
@@ -89,6 +99,7 @@ const loadTweets = function () {
   const url = "/tweets";
   $.getJSON(url)
   .done(data => {
+    $("#tweets-container").empty();
     renderTweets(data);
   })
 }
@@ -96,15 +107,11 @@ const loadTweets = function () {
 
 //calls these functions when the page index.html is loaded 
 $(document).ready(function() {
+  $(".click-to-tweet").click(function(){
+    $("#new-tweet-form").toggleClass("tweet");
+  });
   newTweet();
   loadTweets();
 });
 
-  // const characterCount = characterCounter();
-  // if (!Tweet) {
-  //   alert("Sorry, your tweet was empty...");
-  //   return; 
-  // } else if (characterCount < 0 ) {
-  //   alert("Sorry, your tweet is too long...");
-  //   return; 
-  // } else {
+

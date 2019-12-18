@@ -38,11 +38,16 @@ main {
  */
 
 
+ .tweet {
+   display: none; 
+ }
+
 .tweet-container {
   width: 100%;
   border:  #545149 solid 4px;
   padding: 1.5em;
   padding-bottom: 1em;
+  margin-top: 1em;
   margin-bottom: 1em;
 }
 
@@ -81,17 +86,39 @@ img {
   margin-bottom: 0;
 }
 
-i.fas {
+/*
+ * Icons
+ */
+
+
+
+i.fa-flag {
   margin: 0.2em;
   font-size: medium;
   display: none;
 }
 
+i.fa-retweet {
+  margin: 0.2em;
+  font-size: medium;
+  display: none;
+}
+
+i.fa-heart {
+  margin: 0.2em;
+  font-size: medium;
+  display: none;
+} 
 
 
 #user-handle {
   display: none
 }
+
+
+
+
+
 
 /*
  * Hover CSS elements
@@ -107,6 +134,14 @@ i.fas {
 }
 
 
-.tweet-container:hover i.fas {
+.tweet-container:hover i.fa-flag {
+  display: inline-flex;
+}
+
+.tweet-container:hover i.fa-retweet {
+  display: inline-flex;
+}
+
+.tweet-container:hover i.fa-heart {
   display: inline-flex;
 }

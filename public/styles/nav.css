@@ -16,6 +16,25 @@
   left: 1.0em;
 }
 
+
+
+nav i {
+  border: solid  #FFFFFF;
+  border-width: 0 10px 10px 0;
+  display: inline-block;
+  padding: 7px;
+  position: fixed;
+  top: 2.5em;
+  right: 4.3em;
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+
+
 .nav-fixed-top {
   position: fixed;
   top: 0;
@@ -32,4 +51,14 @@
   position: fixed;
   top: 1em;
   right: 1.5em;
+}
+
+
+.click-to-tweet {
+  background: transparent;
+  position: fixed;
+  top: 2em;
+  right: 3.5em;
+  padding: 1em;
+  border: transparent;
 }
