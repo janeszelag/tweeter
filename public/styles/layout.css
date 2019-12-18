@@ -53,8 +53,15 @@ main {
 .tweet-container footer {
   width: 100%;
   border-top: #545149 solid 4px;
-  margin-bottom: 0em
+  margin-bottom: 0em;
 }
+
+footer div {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+
 
 .tweet-text {
   font-size: xx-large;
@@ -74,10 +81,17 @@ img {
   margin-bottom: 0;
 }
 
-#user-handle {
-  display:none
+i.fas {
+  margin: 0.2em;
+  font-size: medium;
+  display: none;
 }
 
+
+
+#user-handle {
+  display: none
+}
 
 /*
  * Hover CSS elements
@@ -90,4 +104,9 @@ img {
 .tweet-container:hover #user-handle {
   display: block;
   float: right;
+}
+
+
+.tweet-container:hover i.fas {
+  display: inline-flex;
 }

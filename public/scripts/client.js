@@ -72,6 +72,11 @@ const createTweetElement = function(tweet) {
   <p class="tweet-text">${escape(tweet.content.text)}.</p>
   <footer>
     <p id=tweet-age>${ageOfTweet}</p>
+    <div>
+      <i class="fas fa-heart"></i>
+      <i class="fas fa-retweet"></i>
+      <i class="fas fa-flag"></i>
+    </div>
   </footer>
 </article>
  `;
