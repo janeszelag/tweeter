@@ -14,33 +14,6 @@ function tweetAge(time) {
   return timeSince; 
 }
 
-//fake data
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1570002000000
-  }
-]
-
-
 
 
 // loops through an array of tweets, creating a DOM structure for each one via createTweetElement
@@ -85,9 +58,35 @@ const createTweetElement = function(tweet) {
 }
 
 
-$(document).ready(function() {
-  renderTweets(data);
-});
 
+//ajax POST request 
+function newTweet() {
+  const $submitTweet = $('#tweet-form');
+  $submitTweet.submit( function () {
+    event.preventDefault();
+    $submitTweet.serialize()
+
+    $.post('/tweets',  $submitTweet.serialize(), () => {
+      console.log("Success!")
+    })
+  })
+}
+
+
+//ajax GET request from /tweets to receive the array of tweets as JSON
+const loadTweets = function () {
+  const url = "/tweets";
+  $.getJSON(url)
+  .done(data => {
+    renderTweets(data);
+  })
+}
+
+
+
+$(document).ready(function() {
+  newTweet();
+  loadTweets();
+});
 
 

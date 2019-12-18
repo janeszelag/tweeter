@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/moment-with-locales.min.js"></script>
@@ -46,7 +47,7 @@
     <!-- Page-specific (main) content here -->
     <main>
         <section class="tweet">
-          <form method="POST" action='/tweets'>
+          <form id="tweet-form" method="POST" action='/tweets'>
             <textarea id="form-text" name="text" placeholder="What are you humming about?"></textarea>
             <input class="submit-tweet" type="submit" value="Tweet">
             <span id=counter>140</span>
