@@ -1,6 +1,6 @@
 //✧✧✧✧✧✧✧✧✧✧HELPER FUNCTIONS✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧
 
-//function to ensure that content is read as text and not a script for security reasons
+//escape function to ensure that content is read as text and not a script for security reasons
 function escape(str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
@@ -65,6 +65,7 @@ const createTweetElement = function(tweet) {
   const markup = `
   <article class="tweet-container">
   <header>
+    <img src=${tweet.user.avatars}>
     <span id="user-name">${escape(tweet.user.name)}</span>
     <span id="user-handle">${escape(tweet.user.handle)}</span>
   </header>

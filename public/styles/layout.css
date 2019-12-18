@@ -60,6 +60,10 @@ main {
   font-size: xx-large;
 }
 
+img {
+  width:"50";
+  height:"50";
+}
 
 #user-name {
   font-size: x-large;
