@@ -2,14 +2,15 @@
 
 //function to ensure that content is read as text and not a script for security reasons
 function escape(str) {
-  var div = document.createElement('div');
+  let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 }
 
 //uses moment to return the age of the tweet
 function tweetAge(time) {
-  let timeSince = moment(time).fromNow();
+  // const newTime = time / 1000; 
+  const timeSince = moment(time).fromNow();
   return timeSince; 
 }
 
@@ -35,7 +36,7 @@ const data = [
     "content": {
       "text": "Je pense , donc je suis"
     },
-    "created_at": 1461113959088
+    "created_at": 1570002000000
   }
 ]
 
@@ -44,11 +45,9 @@ const data = [
 
 // loops through an array of tweets, creating a DOM structure for each one via createTweetElement
 // appends to tweets container
-
-
 const renderTweets = function(tweets) {
-  for (let tweet of tweets) {
-    let $tweet = createTweetElement(tweet);
+  for (const tweet of tweets) {
+    const $tweet = createTweetElement(tweet);
     console.log($tweet);
     $('#tweets-container').append($tweet);
   }
@@ -61,7 +60,7 @@ const renderTweets = function(tweets) {
 //function that will generate the DOM structure for a tweet, given a tweet object
 const createTweetElement = function(tweet) {
 
-  let ageOfTweet = tweetAge(tweet.created_at);
+  const ageOfTweet = tweetAge(tweet.created_at);
 
   const markup = `
   <article class="tweet-container">
@@ -75,7 +74,7 @@ const createTweetElement = function(tweet) {
   </footer>
 </article>
  `;
-  let $markup =  $(markup);
+  const $markup =  $(markup);
   return $markup; 
 }
 

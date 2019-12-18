@@ -21,6 +21,9 @@ body {
   font-family: "Source Sans Pro", sans-serif;
 }
 
+
+
+
 main {
   width: 90%;
   margin-top: 120px;
@@ -28,6 +31,12 @@ main {
   margin-right: auto;
   margin-top: 0
 }
+
+
+/*
+ * Tweet Container Layout Stuff
+ */
+
 
 .tweet-container {
   width: 100%;
@@ -53,7 +62,7 @@ main {
 
 
 #user-name {
-  font-size: large;
+  font-size: x-large;
 }
 
 #tweet-age {
@@ -64,6 +73,11 @@ main {
 #user-handle {
   display:none
 }
+
+
+/*
+ * Hover CSS elements
+ */
 
 .tweet-container:hover {
   box-shadow: 10px 10px 5px grey;
