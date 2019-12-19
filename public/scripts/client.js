@@ -39,7 +39,7 @@ const createTweetElement = function(tweet) {
   </footer>
 </article>
  `;
-  const $markup =  $(markup);
+  const $markup = $(markup);
   return $markup;
 };
 
