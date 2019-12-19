@@ -114,11 +114,10 @@ const loadTweets = function () {
 
 //calls these functions when the page index.html is loaded 
 $(document).ready(function() {
-  $(".click-to-tweet").click(function(){
+  $(".click-to-tweet").click(function() {
     $("#new-tweet-form").toggleClass("tweet");
+    $("#form-text").focus();
   });
   newTweet();
   loadTweets();
 });
-
-

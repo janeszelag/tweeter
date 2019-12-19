@@ -3,168 +3,361 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
-html {
-  box-sizing: border-box;
+
+/* ●●●●●●●●●●●●●●●●●●●● TABLET OR SMALLER ●●●●●●●●●●●●●●●●●●●● */
+
+
+@media only screen and (max-width: 1024px) {
+
+  html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+  /*
+   * Global layout stuff
+   */
+  
+
+
+  body {
+    color: #545149;
+    background-color: #f4f1ec;
+    font-size: 24px;
+    font-family: "Source Sans Pro", sans-serif;
+  }
+  
+  
+  main {
+    width: 90%;
+    margin-top: 120px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0
+  }
+  
+  
+  /*
+   * Tweet error messages
+   */
+  
+   .error-message {
+    width: 100%;
+    font-weight: bold;
+    font-size: xx-large;
+    text-align: center;
+    color: red;
+    border: solid red 4px;
+    padding: 0.5em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    display: none;
+  }
+  
+  
+  
+  
+  /*
+   * New Tweet Form/Container Layout Stuff
+   */
+  
+  
+   .tweet {
+     display: none; 
+   }
+  
+  
+  .tweet-container {
+    width: 100%;
+    border:  #545149 solid 4px;
+    padding: 1.5em;
+    padding-bottom: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+  
+  .tweet-container header {
+    width: 100%;
+  }
+  
+  .tweet-container footer {
+    width: 100%;
+    border-top: #545149 solid 4px;
+    margin-bottom: 0em;
+  }
+  
+  footer div {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  
+  .tweet-text {
+    font-size: xx-large;
+    word-wrap: break-word;
+  }
+  
+  img {
+    width:"50";
+    height:"50";
+  }
+  
+  #user-name {
+    font-size: x-large;
+  }
+  
+  #tweet-age {
+    font-size: medium;
+    margin-bottom: 0;
+  }
+  
+
+  
+  
+  /*
+   * Icons for tweet container
+   */
+  
+  
+  
+  i.fa-flag {
+    margin: 0.2em;
+    font-size: medium;
+    display: none;
+  }
+  
+  i.fa-retweet {
+    margin: 0.2em;
+    font-size: medium;
+    display: none;
+  }
+  
+  i.fa-heart {
+    margin: 0.2em;
+    font-size: medium;
+    display: none;
+  } 
+  
+  
+  #user-handle {
+    display: none
+  }
+  
+  
+  
+  /*
+   * Hover CSS elements
+   */
+  
+  .tweet-container:hover {
+    box-shadow: 10px 10px 5px grey;
+  }
+  
+  .tweet-container:hover #user-handle {
+    display: block;
+    float: right;
+  }
+  
+  
+  .tweet-container:hover i.fa-flag {
+    display: inline-flex;
+  }
+  
+  .tweet-container:hover i.fa-retweet {
+    display: inline-flex;
+  }
+  
+  .tweet-container:hover i.fa-heart {
+    display: inline-flex;
+  }
+
 }
-*, *:before, *:after {
-  box-sizing: inherit;
+
+
+
+/* ●●●●●●●●●●●●●●●●●●●●●●  DESKTOP ●●●●●●●●●●●●●●●●●●●●●●●●● */
+
+
+
+@media only screen and (min-width: 1024px) {
+
+  html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  
+  /*
+   * Global layout stuff
+   */
+  
+  body {
+    color: #545149;
+    background-color: #f4f1ec;
+    font-size: 24px;
+    font-family: "Source Sans Pro", sans-serif;
+  }
+  
+  
+  .main-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 120px;
+  }
+  
+  .main-container-child1 {
+    width: 35%;
+  }
+  .main-container-child2 {
+    width: 65%;
+  }
+  
+  
+  main {
+    width: 90%;
+    margin-top: 120px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0
+  }
+  
+  
+
+  
+  /*
+   * New Tweet Form/Container Layout Stuff
+   */
+  
+  
+   .tweet {
+     display: none; 
+   }
+
+
+  /*
+   * Tweet error messages
+   */
+  
+   .error-message {
+    width: 100%;
+    font-weight: bold;
+    font-size: xx-large;
+    text-align: center;
+    color: red;
+    border: solid red 4px;
+    padding: 0.5em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    display: none;
+  }
+  
+
+
+  /*
+   * Tweet container stuff
+   */
+
+  .tweet-container {
+    width: 100%;
+    border:  #545149 solid 4px;
+    padding: 1.5em;
+    padding-bottom: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+  
+  .tweet-container header {
+    width: 100%;
+  }
+  
+  .tweet-container footer {
+    width: 100%;
+    border-top: #545149 solid 4px;
+    margin-bottom: 0em;
+  }
+  
+  footer div {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  
+  .tweet-text {
+    font-size: xx-large;
+    word-wrap: break-word;
+  }
+  
+  img {
+    width:"50";
+    height:"50";
+  }
+  
+  #user-name {
+    font-size: x-large;
+  }
+  
+  #tweet-age {
+    font-size: medium;
+    margin-bottom: 0;
+  }
+  
+
+  /*
+   * Icons found in tweet container
+   */
+  
+  
+  
+  i.fa-flag {
+    margin: 0.2em;
+    font-size: medium;
+    display: none;
+  }
+  
+  i.fa-retweet {
+    margin: 0.2em;
+    font-size: medium;
+    display: none;
+  }
+  
+  i.fa-heart {
+    margin: 0.2em;
+    font-size: medium;
+    display: none;
+  } 
+  
+  
+  #user-handle {
+    display: none
+  }
+  
+
+  
+  /*
+   * Hover CSS elements
+   */
+  
+  .tweet-container:hover {
+    box-shadow: 10px 10px 5px grey;
+  }
+  
+  .tweet-container:hover #user-handle {
+    display: block;
+    float: right;
+  }
+  
+  
+  .tweet-container:hover i.fa-flag {
+    display: inline-flex;
+  }
+  
+  .tweet-container:hover i.fa-retweet {
+    display: inline-flex;
+  }
+  
+  .tweet-container:hover i.fa-heart {
+    display: inline-flex;
+  }
 }
 
-/*
- * Global layout stuff
- */
-
-body {
-  color: #545149;
-  background-color: #f4f1ec;
-  font-size: 24px;
-  font-family: "Source Sans Pro", sans-serif;
-}
-
-
-
-
-main {
-  width: 90%;
-  margin-top: 120px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0
-}
-
-
-/*
- * Tweet error messages
- */
-
- .error-message {
-  width: 100%;
-  font-weight: bold;
-  font-size: xx-large;
-  text-align: center;
-  color: red;
-  border: solid red 4px;
-  padding: 0.5em;
-  margin-top: 1em;
-  margin-bottom: 1em;
-  display: none;
-}
-
-
-
-
-/*
- * New Tweet Form/Container Layout Stuff
- */
-
-
- .tweet {
-   display: none; 
- }
-
-
-.tweet-container {
-  width: 100%;
-  border:  #545149 solid 4px;
-  padding: 1.5em;
-  padding-bottom: 1em;
-  margin-top: 1em;
-  margin-bottom: 1em;
-}
-
-.tweet-container header {
-  width: 100%;
-}
-
-.tweet-container footer {
-  width: 100%;
-  border-top: #545149 solid 4px;
-  margin-bottom: 0em;
-}
-
-footer div {
-  display: flex;
-  flex-direction: row-reverse;
-}
-
-.tweet-text {
-  font-size: xx-large;
-}
-
-img {
-  width:"50";
-  height:"50";
-}
-
-#user-name {
-  font-size: x-large;
-}
-
-#tweet-age {
-  font-size: medium;
-  margin-bottom: 0;
-}
-
-
-
-
-
-/*
- * Icons
- */
-
-
-
-i.fa-flag {
-  margin: 0.2em;
-  font-size: medium;
-  display: none;
-}
-
-i.fa-retweet {
-  margin: 0.2em;
-  font-size: medium;
-  display: none;
-}
-
-i.fa-heart {
-  margin: 0.2em;
-  font-size: medium;
-  display: none;
-} 
-
-
-#user-handle {
-  display: none
-}
-
-
-
-
-
-
-/*
- * Hover CSS elements
- */
-
-.tweet-container:hover {
-  box-shadow: 10px 10px 5px grey;
-}
-
-.tweet-container:hover #user-handle {
-  display: block;
-  float: right;
-}
-
-
-.tweet-container:hover i.fa-flag {
-  display: inline-flex;
-}
-
-.tweet-container:hover i.fa-retweet {
-  display: inline-flex;
-}
-
-.tweet-container:hover i.fa-heart {
-  display: inline-flex;
-}

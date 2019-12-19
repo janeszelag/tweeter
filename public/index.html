@@ -31,55 +31,61 @@
   </head>
 
   <body>
+
     <!-- Top nav bar (fixed) -->
     <nav class="navbar nav-fixed-top">
       <span class="nav-span tweeter-span">tweeter</span>
       <span class="new-tweet"><b>Write</b> a new tweet</span>
       <!-- <i class="arrow down" ></i> -->
-      <button class="down click-to-tweet" type="button" ></button>
+      <button id="arrow-button" class="down click-to-tweet" type="button" ></button>
     </nav>
 
-    <header class="page-header">
-      <div>
-          <img class="avatar" src="/images/profile-hex.png"> 
-          <h2 id="name">Your Name</h2>
+    <div class="main-container">
+      <div class="main-container-child1">
+        <!-- Header -->
+        <header class="page-header">
+          <div>
+              <img class="avatar" src="/images/profile-hex.png"> 
+              <h2 id="name">Your Name</h2>
+          </div>
+       </header>
       </div>
-  </header>
-
-    <!-- Page-specific (main) content here -->
-    <main>
-        <section id="new-tweet-form" class="tweet">
-          <article id="error-empty-tweet" class="error-message">
-            ❗️No empty tweets plz ❗️
-          </article>
-          <article id="error-too-long" class="error-message">
-            ❗️No tweetz longer than 140 characters plz ❗️
-          </article>
-          <form id="tweet-form" method="POST" action='/tweets'>
-            <textarea id="form-text" name="text" placeholder="What are you humming about?"></textarea>
-            <input class="submit-tweet" type="submit" value="Tweet">
-            <span id=counter>140</span>
-          </form>
-        </section>
-        <section id="tweets-container">
-          <article class="tweet-container">
-            <header>
-              <img src="https://i.imgur.com/73hZDYK.png">
-              <span id="user-name">Name</span>
-              <span id="user-handle">@userHandle</span>
-            </header>
-            <p class="tweet-text">An example tweet.</p>
-            <footer>
-              <p id=tweet-age>X days old</p>
-              <div>
-                <i class="fas fa-heart"></i>
-                <i class="fas fa-retweet"></i>
-                <i class="fas fa-flag"></i>
-              </div>
-              
-            </footer> 
-          </article>
-        </section>
-    </main>
+       <!-- Page-specific (main) content here -->
+      <div class="main-container-child2">
+        <main>
+          <section id="new-tweet-form" class="tweet">
+            <article id="error-empty-tweet" class="error-message">
+              ❗️No empty tweets plz ❗️
+            </article>
+            <article id="error-too-long" class="error-message">
+              ❗️No tweetz longer than 140 characters plz ❗️
+            </article>
+            <form id="tweet-form" method="POST" action='/tweets'>
+              <textarea id="form-text" name="text" placeholder="What are you humming about?"></textarea>
+              <input class="submit-tweet" type="submit" value="Tweet">
+              <span id=counter>140</span>
+            </form>
+          </section>
+          <section id="tweets-container">
+            <article class="tweet-container">
+              <header>
+                <img src="https://i.imgur.com/73hZDYK.png">
+                <span id="user-name">Name</span>
+                <span id="user-handle">@userHandle</span>
+              </header>
+                <p class="tweet-text">An example tweet.</p>
+              <footer>
+                <p id=tweet-age>X days old</p>
+                <div>
+                  <i class="fas fa-heart"></i>
+                  <i class="fas fa-retweet"></i>
+                  <i class="fas fa-flag"></i>
+                </div>
+              </footer> 
+            </article>
+          </section>
+         </main>
+        </divclass="main-container-child">
+    </div>
   </body>
 </html> 
