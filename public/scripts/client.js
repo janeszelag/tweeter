@@ -72,9 +72,15 @@ function newTweet() {
     event.preventDefault();
     const tweetTextLength = $("#form-text").val().length;
     if (tweetTextLength === 0) {
-      alert("Sorry, your tweet was empty...");
+      $('#error-empty-tweet').slideDown();
+      $("#form-text").keyup(() => {
+        $('#error-empty-tweet').slideUp();
+      })
     } else if (tweetTextLength > 140) {
-      alert("Sorry, your tweet is too long...");
+      $('#error-too-long').slideDown();
+      $("#form-text").keyup(() => {
+        $('#error-too-long').slideUp();
+      })
     } else {
       $.post('/tweets',  $submitTweet.serialize(), () => {
         console.log("Success!");
@@ -90,6 +96,7 @@ function newTweet() {
   })
 
 }
+
 
 
 

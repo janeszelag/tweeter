@@ -35,8 +35,8 @@
     <nav class="navbar nav-fixed-top">
       <span class="nav-span tweeter-span">tweeter</span>
       <span class="new-tweet"><b>Write</b> a new tweet</span>
-      <i class="arrow down"></i>
-      <button class="click-to-tweet" type="button" ></button>
+      <!-- <i class="arrow down" ></i> -->
+      <button class="down click-to-tweet" type="button" ></button>
     </nav>
 
     <header class="page-header">
@@ -49,6 +49,12 @@
     <!-- Page-specific (main) content here -->
     <main>
         <section id="new-tweet-form" class="tweet">
+          <article id="error-empty-tweet" class="error-message">
+            ❗️No empty tweets plz ❗️
+          </article>
+          <article id="error-too-long" class="error-message">
+            ❗️No tweetz longer than 140 characters plz ❗️
+          </article>
           <form id="tweet-form" method="POST" action='/tweets'>
             <textarea id="form-text" name="text" placeholder="What are you humming about?"></textarea>
             <input class="submit-tweet" type="submit" value="Tweet">

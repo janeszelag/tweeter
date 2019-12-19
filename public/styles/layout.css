@@ -34,13 +34,34 @@ main {
 
 
 /*
- * Tweet Container Layout Stuff
+ * Tweet error messages
+ */
+
+ .error-message {
+  width: 100%;
+  font-weight: bold;
+  font-size: xx-large;
+  text-align: center;
+  color: red;
+  border: solid red 4px;
+  padding: 0.5em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  display: none;
+}
+
+
+
+
+/*
+ * New Tweet Form/Container Layout Stuff
  */
 
 
  .tweet {
    display: none; 
  }
+
 
 .tweet-container {
   width: 100%;
@@ -66,8 +87,6 @@ footer div {
   flex-direction: row-reverse;
 }
 
-
-
 .tweet-text {
   font-size: xx-large;
 }
@@ -85,6 +104,10 @@ img {
   font-size: medium;
   margin-bottom: 0;
 }
+
+
+
+
 
 /*
  * Icons
