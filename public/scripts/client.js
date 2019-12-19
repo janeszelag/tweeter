@@ -16,6 +16,32 @@ const tweetAge = function(time) {
   return timeSince;
 };
 
+//function that will generate the DOM structure for a tweet, given a tweet object
+const createTweetElement = function(tweet) {
+
+  const ageOfTweet = tweetAge(tweet.created_at);
+
+  const markup = `
+  <article class="tweet-container">
+  <header>
+    <img src=${tweet.user.avatars}>
+    <span id="user-name">${escape(tweet.user.name)}</span>
+    <span id="user-handle">${escape(tweet.user.handle)}</span>
+  </header>
+  <p class="tweet-text">${escape(tweet.content.text)}</p>
+  <footer>
+    <p id=tweet-age>${ageOfTweet}</p>
+    <div>
+      <i class="fas fa-heart"></i>
+      <i class="fas fa-retweet"></i>
+      <i class="fas fa-flag"></i>
+    </div>
+  </footer>
+</article>
+ `;
+  const $markup =  $(markup);
+  return $markup;
+};
 
 
 //✧✧✧✧✧✧✧✧✧✧Recieving & Rendering Tweets Functions✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧
@@ -34,39 +60,9 @@ const renderTweets = function(tweets) {
 
 
 
-
-//function that will generate the DOM structure for a tweet, given a tweet object
-const createTweetElement = function(tweet) {
-
-  const ageOfTweet = tweetAge(tweet.created_at);
-
-  const markup = `
-  <article class="tweet-container">
-  <header>
-    <img src=${tweet.user.avatars}>
-    <span id="user-name">${escape(tweet.user.name)}</span>
-    <span id="user-handle">${escape(tweet.user.handle)}</span>
-  </header>
-  <p class="tweet-text">${escape(tweet.content.text)}.</p>
-  <footer>
-    <p id=tweet-age>${ageOfTweet}</p>
-    <div>
-      <i class="fas fa-heart"></i>
-      <i class="fas fa-retweet"></i>
-      <i class="fas fa-flag"></i>
-    </div>
-  </footer>
-</article>
- `;
-  const $markup =  $(markup);
-  return $markup;
-};
-
-
 //ajax POST request for new tweet submission
 const newTweet = function() {
   const $submitTweet = $('#tweet-form');
-  console.log('hiiiiiii',$submitTweet);
   
   $submitTweet.submit(function() {
     event.preventDefault();
@@ -96,9 +92,6 @@ const newTweet = function() {
   });
 
 };
-
-
-
 
 
 //ajax GET request from /tweets to receive the array of tweets as JSON
