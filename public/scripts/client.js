@@ -52,7 +52,6 @@ const createTweetElement = function(tweet) {
 const renderTweets = function(tweets) {
   for (const tweet of tweets) {
     const $tweet = createTweetElement(tweet);
-    console.log($tweet);
     $('#tweets-container').prepend($tweet);
   }
   return;
@@ -79,7 +78,6 @@ const newTweet = function() {
       });
     } else {
       $.post('/tweets',  $submitTweet.serialize(), () => {
-        console.log("Success!");
       })
         .done(function() {
           loadTweets();
